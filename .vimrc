@@ -1,17 +1,23 @@
 " настройки среды
-set nocompatible     " отключить режим совместимости с vi
-filetype plugin on   " включает плагин netrw
-set history=200		 " количество команд в истории
-set noswapfile		 " отключает своп-файл
-set guifont=Courier_New:h10:cRUSSIAN:qDRAFT	 " настройки шрифта
+set nocompatible    " отключить режим совместимости с vi
+filetype plugin on  " включает подстройку под типы файлов
+set history=200		" количество команд в истории
+set noswapfile		" отключает своп-файл
+set novisualbell    " не мигать
+set t_vb=           " не пищать
+
+set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
 colorscheme Tomorrow " цветовая схема 
-"set background=dark "light
-syntax on			 " подсветка синтаксиса
-"syntax enable ???
-set number			 " нумерация строк
-set guioptions-=m  " отключает menu bar
-set guioptions-=T  " отключает toolbar
-set guioptions-=r  " отключает scrollbar
+syntax on			" подсветка синтаксиса
+set number			" нумерация строк
+"set relativenumber  " относительная нумерация
+set nowrap          " отключение переноса строк
+set sidescroll=10   " видно символов рядом с курсором
+set guioptions-=m   " отключает menu bar
+set guioptions-=T   " отключает toolbar
+set guioptions-=r   " отключает scrollbar
+
+set autochdir       " автопереключение на каталог файла
 
 " табуляция
 set tabstop=4
@@ -32,13 +38,22 @@ set fileencodings=utf8,cp1251
 " для программирования
 " set makeef=##
 " set shellpipe=>
+"
+" Подсветка 80й колонки в *.py файлах
+" autocmd FileType python setlocal colorcolumn=80
 
+" сворачивание блоков
+set foldenable
+set foldmethod=syntax
 
 " сопоставление клавиш
-
+" disable F1
+imap <F1> <nop>
+nmap <F1> <nop>
 
 " плагины
 
 " netrw
 let g:netrw_banner = 0
+
 
