@@ -7,10 +7,10 @@ set novisualbell    " не мигать
 set t_vb=           " не пищать
 
 set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
-colorscheme Tomorrow " цветовая схема 
+set background=dark
+colorscheme hybrid  " цветовая схема 
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
-"set relativenumber  " относительная нумерация
 set nowrap          " отключение переноса строк
 set sidescroll=10   " видно символов рядом с курсором
 set guioptions-=m   " отключает menu bar
