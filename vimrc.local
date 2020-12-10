@@ -11,7 +11,9 @@ set background=dark
 colorscheme hybrid  " цветовая схема 
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
-set nowrap          " отключение переноса строк
+"set nowrap         " отключение переноса строк
+set wrap            " видимый перенос строк
+set linebreak       " перенос только по пробельным символам
 set sidescroll=10   " видно символов рядом с курсором
 set guioptions-=m   " отключает menu bar
 set guioptions-=T   " отключает toolbar
