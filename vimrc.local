@@ -7,8 +7,8 @@ set novisualbell    " не мигать
 set t_vb=           " не пищать
 
 set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
-set background=dark
-colorscheme hybrid  " цветовая схема 
+"set background=dark
+colorscheme Tomorrow  " цветовая схема 
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
 "set nowrap         " отключение переноса строк
@@ -20,6 +20,7 @@ set guioptions-=T   " отключает toolbar
 set guioptions-=r   " отключает scrollbar
 
 set autochdir       " автопереключение на каталог файла
+set autowrite       " автозапись файлов при сборке
 
 " табуляция
 set tabstop=4
