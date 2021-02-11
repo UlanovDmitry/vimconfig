@@ -1,6 +1,23 @@
 " настройки среды
 set nocompatible    " отключить режим совместимости с vi
-filetype plugin on  " включает подстройку под типы файлов
+filetype off                  
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+"call vundle#begin('~/.vim/bundle/Vundle.vim') " alternatively, pass a path where Vundle should install plugins
+Plugin 'VundleVim/Vundle.vim' 
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'google/vim-maktaba'
+Plugin 'google/vim-codefmt'
+Plugin 'google/vim-glaive'
+Plugin 'ilyachur/cmake4vim'
+Plugin 'lpenz/vimcommander'
+call vundle#end()            
+call glaive#Install()
+Glaive codefmt plugin[mappings]
+filetype plugin on    
+
 set history=200		" количество команд в истории
 set noswapfile		" отключает своп-файл
 set novisualbell    " не мигать
@@ -9,6 +26,7 @@ set t_vb=           " не пищать
 set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
 "set background=dark
 colorscheme Tomorrow  " цветовая схема 
+
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
 "set nowrap         " отключение переноса строк
@@ -56,7 +74,24 @@ nmap <F1> <nop>
 
 " плагины
 
+" google/vim-codefmt
+augroup autoformat_settings
+  autocmd FileType bzl AutoFormatBuffer buildifier
+  autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+  autocmd FileType dart AutoFormatBuffer dartfmt
+  autocmd FileType go AutoFormatBuffer gofmt
+  autocmd FileType gn AutoFormatBuffer gn
+  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+  autocmd FileType java AutoFormatBuffer google-java-format
+  autocmd FileType python AutoFormatBuffer yapf
+  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
+  autocmd FileType vue AutoFormatBuffer prettier
+augroup END
+
+
 " netrw
 let g:netrw_banner = 0
 
+" commander
+noremap <F12> :cal VimCommanderToggle()<CR>
 
