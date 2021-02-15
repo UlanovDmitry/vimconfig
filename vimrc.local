@@ -3,9 +3,9 @@ set nocompatible    " отключить режим совместимости �
 filetype plugin on    
 
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'ilyachur/cmake4vim'
 call plug#end()
 
 set history=200		" количество команд в истории
@@ -14,8 +14,9 @@ set novisualbell    " не мигать
 set t_vb=           " не пищать
 
 set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
-"set background=dark
-colorscheme Tomorrow  " цветовая схема 
+"set t_Co=256   " This is may or may not needed.
+set background=light
+colorscheme PaperColor
 
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
@@ -66,9 +67,6 @@ nmap <F1> <nop>
 
 " netrw
 let g:netrw_banner = 0
-
-" commander
-"noremap <F12> :cal VimCommanderToggle()<CR>
 
 "nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
