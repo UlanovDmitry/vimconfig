@@ -6,6 +6,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'ilyachur/cmake4vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'preservim/nerdtree'
 call plug#end()
 
 set history=200		" количество команд в истории
@@ -16,7 +18,8 @@ set t_vb=           " не пищать
 set guifont=Courier_New:h9:cRUSSIAN:qDRAFT	 " настройки шрифта
 "set t_Co=256   " This is may or may not needed.
 set background=light
-colorscheme PaperColor
+"colorscheme PaperColor
+colorscheme zenburn
 
 syntax on			" подсветка синтаксиса
 set number			" нумерация строк
@@ -78,5 +81,5 @@ nnoremap <C-f> :NERDTreeFind<CR>
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
-source /etc/vim/coc.vim
+source /usr/share/nvim/coc.vim
 
