@@ -8,6 +8,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'ilyachur/cmake4vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'preservim/nerdtree'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 set history=200		" количество команд в истории
@@ -73,13 +74,18 @@ let g:netrw_banner = 0
 
 "nerdtree
 nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+"nnoremap <C-n> :NERDTree<CR>
+"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap <C-f> :NERDTreeFind<CR>
 
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 
+" coc.nvim
 source /usr/share/nvim/coc.vim
+
+" vimwiki
+let g:vimwiki_list = [{'path': '~/MEGA/MEGAsync/knowledge_base/',  'syntax': 'markdown', 'ext': '.md', 'index': 'README'}]
+
 
